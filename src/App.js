@@ -1,11 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import fetchCalls from './actions/fetchCalls';
 
 class App extends React.Component {
 
   componentDidMount() {
-    fetch("http://localhost:4000/api/v1/calls")
-      .then(resp => resp.json())
-      .then(data => console.log(data))
+    this.props.fetchCalls({type: "FETCH_CALLS"});
   }
 
   render() {
@@ -18,4 +18,10 @@ class App extends React.Component {
 
 }
 
-export default App;
+// const mapStateToProps = (state) => {
+//   return {
+//     calls: state.calls
+//   }
+// }
+
+export default connect(null, {fetchCalls})(App);
