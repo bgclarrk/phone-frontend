@@ -1,15 +1,15 @@
 import React from "react";
 
-class KeypadDisplay extends React.Component {
-    
+class Buttons extends React.Component {
+
     render() {
         return (
             <div>
-                Keypad Display
+                Buttons
             </div>
         )
     }
 
 }
 
-export default KeypadDisplay;
+export default Buttons;
