@@ -8,7 +8,7 @@ function callReducer(state = { calls: [] }, action) {
     //     default:
     //         return state;
     // }
-    return action.payload
+
 }
 
 export default callReducer;
