@@ -1,13 +1,11 @@
 function callReducer(state = { calls: [] }, action) {
 
-    // switch(state.action) {
-    //     case "FETCH_CALLS":
-    //         return {
-    //             calls: state.calls + 1
-    //         }
-    //     default:
-    //         return state;
-    // }
+    switch(action.type) {
+        case "FETCH_CALLS":
+            return {calls: action.payload}
+        default:
+            return state;
+    }
 
 }
 
