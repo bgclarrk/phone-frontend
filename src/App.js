@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import fetchCalls from './actions/fetchCalls';
+import CallHistoryContainer from './containers/CallHistoryContainer';
+import PhoneContainer from './containers/PhoneContainer';
+
 
 class App extends React.Component {
 
