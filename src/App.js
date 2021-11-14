@@ -5,7 +5,7 @@ import fetchCalls from './actions/fetchCalls';
 class App extends React.Component {
 
   componentDidMount() {
-    this.props.fetchCalls({type: "FETCH_CALLS"});
+    this.props.fetchCalls({type: "FETCH_CALLS", payload: {name: "checking"} });
   }
 
   render() {
@@ -17,11 +17,5 @@ class App extends React.Component {
   }
 
 }
-
-// const mapStateToProps = (state) => {
-//   return {
-//     calls: state.calls
-//   }
-// }
 
 export default connect(null, {fetchCalls})(App);

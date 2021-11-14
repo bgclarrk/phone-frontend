@@ -1,4 +1,5 @@
 function callReducer(state = { calls: [] }, action) {
+
     // switch(state.action) {
     //     case "FETCH_CALLS":
     //         return {
@@ -7,7 +8,7 @@ function callReducer(state = { calls: [] }, action) {
     //     default:
     //         return state;
     // }
-    return state;
+    return action.payload
 }
 
 export default callReducer;
