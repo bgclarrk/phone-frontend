@@ -19,7 +19,10 @@ const CallHistory = (props) => {
         let seconds = (duration % 60).toString();
 
         if (seconds.length === 1) {
-            seconds = ('0' + seconds).slice(-2)
+            seconds = ('0' + seconds).slice(-2);
+        }
+        if (minutes.length === 1) {
+            minutes = ('0' + minutes).slice(-2);
         }
 
         return minutes + ':' + seconds
