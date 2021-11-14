@@ -11,7 +11,7 @@ class CallHistoryContainer extends React.Component {
 
     render() {
         return (
-            <div>
+            <div class="container">
                 <CallHistory calls={this.props.calls} />
             </div>
         );
