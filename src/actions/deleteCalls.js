@@ -1,7 +1,8 @@
 function deleteCalls() {
 
-    return (id) => {
-        fetch("http://localhost:3001/api/v1/calls" + id, {
+    return (dispatch, id) => {
+        debugger;
+        fetch("http://localhost:3001/api/v1/calls/" + id, {
             method: 'DELETE',
             headers: 'application/json'
         })

@@ -1,12 +1,23 @@
-function callReducer(state = { calls: [] }, action) {
+function callReducer(
+    state = {
+        calls: [],
+        phoneNumber: "",
+        duration: 0
+    },
+    action
+) {
 
     switch(action.type) {
         case "FETCH_CALLS":
-            return {calls: action.payload};
+            return {...state, calls: action.payload};
+        case "PHONE_NUMBER":
+            return {...state, phoneNumber: this.state.phoneNumber += action.payload};
         case "CREATE_CALLS":
-            return {calls: action.payload};
+            return {...state, calls: action.payload};
+        case "INCREASE_DURATION":
+            return {...state, duration: action.payload};
         case "DELETE_CALLS":
-            return {calls: action.payload};
+            return {...state, calls: action.payload};
         default:
             return state;
     }

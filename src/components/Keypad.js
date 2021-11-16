@@ -2,51 +2,57 @@ import React from "react";
 
 class Keypad extends React.Component {
 
+    // handleOnClick = () => {
+    //     this.props.store.dispatch({
+    //         type: 'PHONE_NUMBER',
+    //     });
+    // }
+
     render() {
         return (
-            <div class="text-center">
-                <div class="row text-center">
-                    <div class="col-1">
-                        <button type="button" id="1" class="btn btn-primary btn-lg keypad">1</button>
+            <div className="text-center">
+                <div className="row text-center">
+                    <div className="col-1">
+                        <button type="button" id="1" className="btn btn-primary btn-lg keypad">1</button>
                     </div>
-                    <div class="col-1">
-                        <button type="button" id="2" class="btn btn-primary btn-lg keypad">2</button>
+                    <div className="col-1">
+                        <button type="button" id="2" className="btn btn-primary btn-lg keypad">2</button>
                     </div>
-                    <div class="col-1">
-                        <button type="button" id="3" class="btn btn-primary btn-lg keypad">3</button>
-                    </div>
-                </div>
-                <div class="row text-center">
-                    <div class="col-1">
-                        <button type="button" id="4" class="btn btn-primary btn-lg keypad">4</button>
-                    </div>
-                    <div class="col-1">
-                        <button type="button" id="5" class="btn btn-primary btn-lg keypad">5</button>
-                    </div>
-                    <div class="col-1">
-                        <button type="button" id="6" class="btn btn-primary btn-lg keypad">6</button>
+                    <div className="col-1">
+                        <button type="button" id="3" className="btn btn-primary btn-lg keypad">3</button>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <div class="col-1">
-                        <button type="button" id="7" class="btn btn-primary btn-lg keypad">7</button>
+                <div className="row text-center">
+                    <div className="col-1">
+                        <button type="button" id="4" className="btn btn-primary btn-lg keypad">4</button>
                     </div>
-                    <div class="col-1">
-                        <button type="button" id="8" class="btn btn-primary btn-lg keypad">8</button>
+                    <div className="col-1">
+                        <button type="button" id="5" className="btn btn-primary btn-lg keypad">5</button>
                     </div>
-                    <div class="col-1">
-                        <button type="button" id="9" class="btn btn-primary btn-lg keypad">9</button>
+                    <div className="col-1">
+                        <button type="button" id="6" className="btn btn-primary btn-lg keypad">6</button>
                     </div>
                 </div>
-                <div class="row text-center">
-                    <div class="col-1">
-                        <button type="button" id="asterisk" class="btn btn-primary btn-lg keypad">&#x204E;</button>
+                <div className="row text-center">
+                    <div className="col-1">
+                        <button type="button" id="7" className="btn btn-primary btn-lg keypad">7</button>
                     </div>
-                    <div class="col-1">
-                        <button type="button" id="0" class="btn btn-primary btn-lg keypad">0</button>
+                    <div className="col-1">
+                        <button type="button" id="8" className="btn btn-primary btn-lg keypad">8</button>
                     </div>
-                    <div class="col-1">
-                        <button type="button" id="hashtag" class="btn btn-primary btn-lg keypad">&#35;</button>
+                    <div className="col-1">
+                        <button type="button" id="9" className="btn btn-primary btn-lg keypad">9</button>
+                    </div>
+                </div>
+                <div className="row text-center">
+                    <div className="col-1">
+                        <button type="button" id="asterisk" className="btn btn-primary btn-lg keypad">&#x204E;</button>
+                    </div>
+                    <div className="col-1">
+                        <button type="button" id="0" className="btn btn-primary btn-lg keypad">0</button>
+                    </div>
+                    <div className="col-1">
+                        <button type="button" id="hashtag" className="btn btn-primary btn-lg keypad">&#35;</button>
                     </div>
                 </div>
             </div>

@@ -1,13 +1,15 @@
 import React from "react";
 
 class KeypadDisplay extends React.Component {
-    
+    // componentDidMount() {
+    //     debugger;
+    // }
     render() {
         return (
-            <div class="row">
-                <div class="col-3">
-                    <div class="alert alert-secondary text-center" role="alert">
-                        Keypad Display
+            <div className="row">
+                <div className="col-3">
+                    <div className="alert alert-secondary text-center" role="alert">
+                        {/* {this.props.store.getState().phoneNumber} */}
                     </div>
                 </div>
             </div>

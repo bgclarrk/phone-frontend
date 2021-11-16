@@ -2,12 +2,16 @@ import React from "react";
 
 class Buttons extends React.Component {
 
+    state = {
+        duration: 0,
+    }
+
     render() {
         return (
-            <div class="row text-center">
-                <div class="col-3">
-                    <button type="button" class="btn btn-success">Start</button>
-                    <button type="button" class="btn btn-danger">end</button>
+            <div className="row text-center">
+                <div className="col-3">
+                    <button type="button" className="btn btn-success">Start</button>
+                    <button type="button" className="btn btn-danger">end</button>
                 </div>
             </div>
         )
