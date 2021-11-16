@@ -1,0 +1,11 @@
+.container {
+    margin-top: 3rem;
+}
+
+button {
+    margin: .5rem !important;
+}
+
+.keypad {
+    border-radius: 2rem !important;
+}

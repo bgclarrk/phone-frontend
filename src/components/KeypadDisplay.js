@@ -4,8 +4,12 @@ class KeypadDisplay extends React.Component {
     
     render() {
         return (
-            <div>
-                Keypad Display
+            <div class="row">
+                <div class="col-3">
+                    <div class="alert alert-secondary text-center" role="alert">
+                        Keypad Display
+                    </div>
+                </div>
             </div>
         )
     }

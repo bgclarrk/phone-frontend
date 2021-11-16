@@ -2,7 +2,6 @@ import React from "react";
 import moment from 'moment';
 
 const CallHistory = (props) => {
-    debugger;
     const formattedTime = (dateTime) => {
         return moment(dateTime).format('L LT');
     }
