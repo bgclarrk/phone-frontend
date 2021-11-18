@@ -4,7 +4,7 @@ const initialState = {
     duration: 0
 }
 
-function callReducer(state={initialState}, action) {
+function callReducer(state=initialState, action) {
 
     switch(action.type) {
         case "FETCH_CALLS":

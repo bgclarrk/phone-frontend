@@ -42,10 +42,10 @@ const CallHistory = (props) => {
             {props.calls.map(call => {
                 return (
                     <div className="row" key={call.created_at}>
-                        <div className="col-3">&nbsp; {formattedTime(call.created_at)}</div>
-                        <div className="col-3">&nbsp; {formattedPhone(call.phone_number)}</div>
-                        <div className="col-3">&nbsp; {formattedDuration(call.duration)}</div>
-                        <div id={call.id} className="col-3">&nbsp; X</div>
+                        <div className="col-3"> {formattedTime(call.created_at)}</div>
+                        <div className="col-3"> {formattedPhone(call.phone_number)}</div>
+                        <div className="col-3"> {formattedDuration(call.duration)}</div>
+                        <div id={call.id} className="col-3"> X</div>
                     </div>
                 )
             })}
