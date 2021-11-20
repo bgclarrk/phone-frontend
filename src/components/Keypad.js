@@ -2,12 +2,6 @@ import React from 'react';
 
 class Keypad extends React.Component {
 
-    // handleOnClick = () => {
-    //     this.props.store.dispatch({
-    //         type: 'PHONE_NUMBER',
-    //     });
-    // }
-
     render() {
         return (
             <div className="text-center">
