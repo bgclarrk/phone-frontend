@@ -12,7 +12,17 @@ class CallHistoryContainer extends React.Component {
     render() {
         return (
             <div className="container">
-                <CallHistory calls={this.props.calls} />
+                <div className="row">
+                    <h2>Call History</h2>
+                    {console.log(this.props.calls)}
+                </div>
+                <div className="row">
+                    <div className="col-3"><h6>Call Start</h6></div>
+                    <div className="col-3"><h6>Phone Number</h6></div>
+                    <div className="col-3"><h6>Call Duration</h6></div>
+                    <div className="col-3"><h6>Delete Call</h6></div>
+                </div>
+                {this.props.calls.map(call => <CallHistory {...call} key={call.createdAt}/>)}
             </div>
         );
     }
