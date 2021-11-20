@@ -1,9 +1,7 @@
 import React from 'react';
 
 class KeypadDisplay extends React.Component {
-    // componentDidMount() {
-    //     debugger;
-    // }
+
     render() {
         return (
             <div className="row">
