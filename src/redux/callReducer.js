@@ -1,7 +1,7 @@
 const initialState = {
     calls: [],
     phoneNumber: "",
-    duration: 0
+    duration: null,
 }
 
 function callReducer(state=initialState, action) {
@@ -12,7 +12,7 @@ function callReducer(state=initialState, action) {
         case "NEW_CALL":
             return {...state, calls: action.payload};
         case "DELETE_CALL":
-            return {...state, calls: state.calls.filter(call => call !== action.payload)};
+            return {...state, calls: state.calls.filter(call => call.id !== action.payload)};
         default:
             return state;
     }

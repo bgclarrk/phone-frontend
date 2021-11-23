@@ -35,8 +35,7 @@ export const deleteCall = (id) => {
         },
         method: "DELETE"
     })
-        .then((res) => res.json())
-        .then((calls) => dispatch({
+        .then(() => dispatch({
             type: "DELETE_CALL",
             payload: id
         }))
