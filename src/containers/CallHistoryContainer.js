@@ -14,7 +14,6 @@ class CallHistoryContainer extends React.Component {
             <div className="container">
                 <div className="row">
                     <h2>Call History</h2>
-                    {console.log(this.props.calls)}
                 </div>
                 <div className="row">
                     <div className="col-3"><h6>Call Start</h6></div>

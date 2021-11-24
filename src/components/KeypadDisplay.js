@@ -7,7 +7,7 @@ class KeypadDisplay extends React.Component {
             <div className="row">
                 <div className="col-3">
                     <div className="alert alert-secondary text-center" role="alert">
-                        {/* {this.props.store.getState().phoneNumber} */}
+                        {this.props.phoneNumber}
                     </div>
                 </div>
             </div>
