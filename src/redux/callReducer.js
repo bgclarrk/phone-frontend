@@ -11,6 +11,8 @@ function callReducer(state=initialState, action) {
             return {...state, calls: action.payload};
         case "ADD_NUMBER":
             return {...state, phoneNumber: state.phoneNumber + action.payload}
+        case "GET_NUMBER":
+            return {...state, phoneNumber: state.phoneNumber}
         case "NEW_CALL":
             return {...state, calls: action.payload};
         case "DELETE_CALL":

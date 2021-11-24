@@ -16,6 +16,10 @@ export const addNumber = (num) => {
     return ({type: "ADD_NUMBER", payload: num})
 }
 
+export const getPhoneNumber = () => {
+    return ({type: "GET_NUMBER"})
+}
+
 export const newCall = () => {
     return dispatch => fetch(`http://localhost:3001/api/v1/calls/new`, {
         headers: {
