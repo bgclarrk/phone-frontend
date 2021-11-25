@@ -7,17 +7,17 @@ export const getCalls = () => {
     })
         .then((res) => res.json())
         .then((calls) => dispatch({
-            type: "FETCH_CALLS",
+            type: "history/getCalls",
             payload: calls
         }))
 }
 
 export const addNumber = (num) => {
-    return ({type: "ADD_NUMBER", payload: num})
+    return ({type: "phone/addNumber", payload: num})
 }
 
 export const getPhoneNumber = () => {
-    return ({type: "GET_NUMBER"})
+    return ({type: "phone/getNumber"})
 }
 
 export const newCall = () => {
@@ -30,7 +30,7 @@ export const newCall = () => {
     })
         .then((res) => res.json())
         .then((calls) => dispatch({
-            type: "NEW_CALL",
+            type: "phone/newCall",
             payload: calls
         }))
 }
@@ -44,7 +44,7 @@ export const deleteCall = (id) => {
         method: "DELETE"
     })
         .then(() => dispatch({
-            type: "DELETE_CALL",
+            type: "history/deleteCall",
             payload: id
         }))
 }

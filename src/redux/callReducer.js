@@ -7,15 +7,15 @@ const initialState = {
 function callReducer(state=initialState, action) {
 
     switch(action.type) {
-        case "FETCH_CALLS":
+        case "history/getCalls":
             return {...state, calls: action.payload};
-        case "ADD_NUMBER":
+        case "phone/addNumber":
             return {...state, phoneNumber: state.phoneNumber + action.payload}
-        case "GET_NUMBER":
+        case "phone/getNumber":
             return {...state, phoneNumber: state.phoneNumber}
-        case "NEW_CALL":
+        case "phone/newCall":
             return {...state, calls: action.payload};
-        case "DELETE_CALL":
+        case "history/deleteCall":
             return {...state, calls: state.calls.filter(call => call.id !== action.payload)};
         default:
             return state;
