@@ -21,7 +21,7 @@ class CallHistoryContainer extends React.Component {
                     <div className="col-3"><h6>Call Duration</h6></div>
                     <div className="col-3"><h6>Delete Call</h6></div>
                 </div>
-                {this.props.calls.map(call => <CallHistory {...call} key={call.createdAt}/>)}
+                {/* {this.props.calls.map(call => <CallHistory {...call} key={call.createdAt}/>)} */}
             </div>
         );
     }

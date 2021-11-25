@@ -1,6 +1,6 @@
 import React from 'react';
-import KeypadDisplay from '../components/KeypadDisplay';
-import Keypad from '../components/Keypad';
+import { KeypadDisplay } from '../components/KeypadDisplay';
+import { Keypad } from '../components/Keypad';
 import Buttons from '../components/Buttons';
 import { connect } from 'react-redux';
 

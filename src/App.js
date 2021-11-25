@@ -12,7 +12,7 @@ class App extends React.Component {
         <Nav />
         <div className="App">
           <Switch>
-            <Route path="/call" component={PhoneContainer} />
+            <Route path="/phone" component={PhoneContainer} />
             <Route path="/history" component={CallHistoryContainer} />
           </Switch>
         </div>

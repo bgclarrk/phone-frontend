@@ -6,7 +6,7 @@ function Nav() {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
         <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
-                <NavLink to="/call" className="nav-item nav-link">Call</NavLink>
+                <NavLink to="/phone" className="nav-item nav-link">Phone</NavLink>
                 <NavLink to="/history" className="nav-item nav-link">History</NavLink>
             </div>
         </div>

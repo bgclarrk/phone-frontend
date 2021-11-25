@@ -1,27 +1,16 @@
-import { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { getPhoneNumber } from '../redux/actionCreators';
+import { useDispatch } from 'react-redux';
+import { getPhoneNumber } from '../redux/phoneSlice';
 
-function KeypadDisplay({getPhoneNumber, phoneNumber}) {
+export function KeypadDisplay() {
 
-    useEffect(() => {
-        return getPhoneNumber()
-    }, [getPhoneNumber, phoneNumber])
-debugger;
     return (
         <div className="row">
             <div className="col-3">
                 <div className="alert alert-secondary text-center" role="alert">
-                    {getPhoneNumber}
+                    Phone Number: 
                 </div>
             </div>
         </div>
     )
 
 }
-
-const mapStateToProps = (state) => {
-    return {...state.phoneNumber}
-}
-
-export default connect(mapStateToProps, { getPhoneNumber })(KeypadDisplay);
