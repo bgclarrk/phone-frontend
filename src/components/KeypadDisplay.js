@@ -1,17 +1,12 @@
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export const KeypadDisplay = () => {
-
-    function stop() {
-        debugger;
-        return "poo"
-    }
 
     return (
         <div className="row">
             <div className="col-3">
                 <div className="alert alert-secondary text-center" role="alert">
-                    Number: {stop()}
+                    {useSelector(state => state.call.phoneNumber)}
                 </div>
             </div>
         </div>
