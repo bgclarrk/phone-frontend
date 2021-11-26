@@ -1,35 +1,31 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import { getCalls } from '../redux/actionCreators';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { getCallsAction } from '../redux/actionCreators';
+import { selectAllCalls } from '../redux/historySlice';
 import CallHistory from '../components/CallHistory';
 
-class CallHistoryContainer extends React.Component {
+export function CallHistoryContainer() {
+    const dispatch = useDispatch()
+    const calls = useSelector(selectAllCalls)
 
-    componentDidMount() {
-        this.props.getCalls();
-    }
+    useEffect(() => {
+        debugger
+        getCallsAction()
+    }, [dispatch])
 
-    render() {
-        return (
-            <div className="container">
-                <div className="row">
-                    <h2>Call History</h2>
-                </div>
-                <div className="row">
-                    <div className="col-3"><h6>Call Start</h6></div>
-                    <div className="col-3"><h6>Phone Number</h6></div>
-                    <div className="col-3"><h6>Call Duration</h6></div>
-                    <div className="col-3"><h6>Delete Call</h6></div>
-                </div>
-                {/* {this.props.calls.map(call => <CallHistory {...call} key={call.createdAt}/>)} */}
+    return (
+        <div className="container">
+            <div className="row">
+                <h2>Call History</h2>
             </div>
-        );
-    }
+            <div className="row">
+                <div className="col-3"><h6>Call Start</h6></div>
+                <div className="col-3"><h6>Phone Number</h6></div>
+                <div className="col-3"><h6>Call Duration</h6></div>
+                <div className="col-3"><h6>Delete Call</h6></div>
+            </div>
+            {/* {calls.map(call => <CallHistory {...calls} key={call.createdAt}/>)} */}
+        </div>
+    );
 
 }
-
-const mapStateToProps = (state) => {
-    return {calls: state.calls}
-}
-
-export default connect(mapStateToProps, { getCalls })(CallHistoryContainer);

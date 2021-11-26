@@ -1,4 +1,4 @@
-export const getCalls = () => {
+export const getCallsAction = () => {
     return dispatch => fetch("http://localhost:3001/api/v1/calls", {
         headers: {
             'Content-Type': 'application/json',
@@ -12,7 +12,7 @@ export const getCalls = () => {
         }))
 }
 
-export const newCall = () => {
+export const newCallAction = () => {
     return dispatch => fetch(`http://localhost:3001/api/v1/calls/new`, {
         headers: {
             'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export const newCall = () => {
         }))
 }
 
-export const deleteCall = (id) => {
+export const deleteCallAction = (id) => {
     return dispatch => fetch(`http://localhost:3001/api/v1/calls/${id}`, {
         headers: {
             'Content-Type': 'application/json',

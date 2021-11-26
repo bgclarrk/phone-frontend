@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const phoneSlice = createSlice({
     name: 'call',
     initialState: {
-        phoneNumber: "",
+        phoneNumber: "123",
         duration: 0
     },
     reducers: {
@@ -14,6 +14,5 @@ export const phoneSlice = createSlice({
 });
 
 export const { addNumber } = phoneSlice.actions;
-export const getPhoneNumber = state => state.call.phoneNumber.value;
 
 export default phoneSlice.reducer;

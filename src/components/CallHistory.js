@@ -1,6 +1,6 @@
 import moment from 'moment';
 import { connect } from 'react-redux';
-import { deleteCall } from '../redux/actionCreators';
+import { deleteCall } from '../redux/historySlice';
 
 const CallHistory = ({id, phoneNumber, duration, createdAt, deleteCall}) => {
 

@@ -1,13 +1,17 @@
-import { useDispatch } from 'react-redux';
-import { getPhoneNumber } from '../redux/phoneSlice';
+import { useSelector, useDispatch } from 'react-redux';
 
-export function KeypadDisplay() {
+export const KeypadDisplay = () => {
+
+    function stop() {
+        debugger;
+        return "poo"
+    }
 
     return (
         <div className="row">
             <div className="col-3">
                 <div className="alert alert-secondary text-center" role="alert">
-                    Phone Number: 
+                    Number: {stop()}
                 </div>
             </div>
         </div>
