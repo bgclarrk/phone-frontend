@@ -14,17 +14,17 @@ const historySlice = createSlice({
         callHistory: [],
         status: null
     },
-    // reducers: {
-    //     getCalls: (state, action) => {
-    //         state.history.callHistory = action.payload;
-    //     },
-    //     newCall: (state, action) => {
-    //         state.history.callHistory.push(action.payload);
-    //     },
-    //     deleteCall: (state, action) => {
-    //         state.history.callHistory = state.history.callHistory.filter(call => call.id !== action.payload);
-    //     },
-    // },
+    reducers: {
+        getCalls: (state, action) => {
+            state.callHistory = action.payload;
+        },
+        newCall: (state, action) => {
+            state.callHistory.push(action.payload);
+        },
+        deleteCall: (state, action) => {
+            state.callHistory = state.callHistory.filter(call => call.id !== action.payload);
+        },
+    },
     extraReducers: {
         [getHistory.pending]: (state) => {
             state.status = "loading";

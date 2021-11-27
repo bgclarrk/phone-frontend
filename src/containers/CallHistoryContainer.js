@@ -5,11 +5,11 @@ import CallHistory from '../components/CallHistory';
 
 export function CallHistoryContainer() {
     const dispatch = useDispatch();
-    // const { history } = useSelector(state => state.history.callHistory);
+    const { history } = useSelector(state => state.history.callHistory);
 
     useEffect(() => {
         dispatch(getHistory())
-    })
+    },[history])
 
     return (
         <div className="container">
@@ -23,7 +23,7 @@ export function CallHistoryContainer() {
                 <div className="col-3"><h6>Delete Call</h6></div>
             </div>
             {useSelector(state => state.history.callHistory)
-                .map(hist => <CallHistory key={hist.createdAt} />)}
+                .map(hist => <CallHistory {...hist} key={hist.createdAt} />)}
         </div>
     );
 

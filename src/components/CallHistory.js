@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { deleteCall } from '../redux/historySlice';
 
 const CallHistory = ({id, phoneNumber, duration, createdAt, deleteCall}) => {
-debugger;
+
     const formattedTime = (dateTime) => {
         return moment(dateTime).format('L LT');
     }
@@ -44,8 +44,8 @@ debugger;
 
 }
 
-// const mapStateToProps = (state) => {
-//     return {...state.calls}
-// }
+const mapStateToProps = (state) => {
+    return {...state.calls}
+}
 
 export default connect(null, {deleteCall})(CallHistory);
