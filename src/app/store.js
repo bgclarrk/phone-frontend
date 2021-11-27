@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
-import phoneSlice from '../redux/phoneSlice';
-import historySlice from '../redux/historySlice';
+import phoneReducer from '../redux/phoneSlice';
+import historyReducer from '../redux/historySlice';
 
-export default configureStore({
+const store = configureStore({
     reducer: {
-        call: phoneSlice,
-        history: historySlice
-    }
+        call: phoneReducer,
+        history: historyReducer
+    },
 })
+
+export default store;

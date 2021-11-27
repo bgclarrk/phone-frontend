@@ -1,17 +1,15 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { getCallsAction } from '../redux/actionCreators';
-import { selectAllCalls } from '../redux/historySlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { getHistory } from '../redux/historySlice';
 import CallHistory from '../components/CallHistory';
 
 export function CallHistoryContainer() {
-    const dispatch = useDispatch()
-    const calls = useSelector(selectAllCalls)
+    const dispatch = useDispatch();
+    // const { history } = useSelector(state => state.history.callHistory);
 
     useEffect(() => {
-        debugger
-        getCallsAction()
-    }, [dispatch])
+        dispatch(getHistory())
+    })
 
     return (
         <div className="container">
@@ -24,8 +22,10 @@ export function CallHistoryContainer() {
                 <div className="col-3"><h6>Call Duration</h6></div>
                 <div className="col-3"><h6>Delete Call</h6></div>
             </div>
-            {/* {calls.map(call => <CallHistory {...calls} key={call.createdAt}/>)} */}
+            {useSelector(state => state.history.callHistory)
+                .map(hist => <CallHistory key={hist.createdAt} />)}
         </div>
     );
 
 }
+

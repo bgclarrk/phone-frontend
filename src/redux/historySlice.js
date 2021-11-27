@@ -1,26 +1,44 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const historySlice = createSlice({
+export const getHistory = createAsyncThunk(
+    "history/getCallHistory",
+    async () => {
+        return await fetch("http://localhost:3001/api/v1/calls")
+        .then(resp => resp.json())
+    }
+)
+
+const historySlice = createSlice({
     name: 'history',
     initialState: {
-        calls: [],
-        status: "idle",
-        error: null
+        callHistory: [],
+        status: null
     },
-    reducers: {
-        getCalls: (state, action) => {
-            state.calls.push(action.payload);
+    // reducers: {
+    //     getCalls: (state, action) => {
+    //         state.history.callHistory = action.payload;
+    //     },
+    //     newCall: (state, action) => {
+    //         state.history.callHistory.push(action.payload);
+    //     },
+    //     deleteCall: (state, action) => {
+    //         state.history.callHistory = state.history.callHistory.filter(call => call.id !== action.payload);
+    //     },
+    // },
+    extraReducers: {
+        [getHistory.pending]: (state) => {
+            state.status = "loading";
         },
-        newCall: (state, action) => {
-            state.calls += action.payload;
+        [getHistory.fulfilled]: (state, action) => {
+            state.status = "success";
+            state.callHistory = action.payload;
         },
-        deleteCall: (state, action) => {
-            state.calls = state.calls.filter(call => call.id !== action.payload);
-        },
+        [getHistory.rejected]: (state) => {
+            state.status = "failed";
+        }
     },
 });
 
 export const { getCalls, newCall, deleteCall } = historySlice.actions;
-export const selectAllCalls = state => state.calls;
 
 export default historySlice.reducer;
