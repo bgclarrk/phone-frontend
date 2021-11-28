@@ -1,7 +1,9 @@
+import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import { deleteHistory } from '../redux/historySlice';
 
 const CallHistory = ({id, phoneNumber, duration, createdAt}) => {
+    const dispatch = useDispatch();
 
     const formattedTime = (dateTime) => {
         return moment(dateTime).format('L LT');
@@ -34,7 +36,7 @@ const CallHistory = ({id, phoneNumber, duration, createdAt}) => {
                 <div className="col-3"> {formattedTime(createdAt)}</div>
                 <div className="col-3"> {formattedPhone(phoneNumber)}</div>
                 <div className="col-3"> {formattedDuration(duration)}</div>
-                <div id={id} onClick={() => deleteHistory(id)} className="col-3">
+                <div id={id} onClick={() => dispatch(deleteHistory(id))} className="col-3">
                     X
                 </div>
             </div>

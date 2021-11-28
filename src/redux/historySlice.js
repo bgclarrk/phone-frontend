@@ -8,6 +8,21 @@ export const getHistory = createAsyncThunk(
     }
 )
 
+export const addHistory = createAsyncThunk(
+    "call/addCallHistory",
+    async (call) => {
+        return await fetch(`http://localhost:3001/api/v1/calls`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            method: "POST",
+            body: JSON.stringify(call)
+        })
+        .then(resp => resp.json())
+    }
+)
+
 export const deleteHistory = createAsyncThunk(
     "history/deleteCallHistory",
     async (id) => {
@@ -28,13 +43,6 @@ const historySlice = createSlice({
         callHistory: [],
         status: null
     },
-    // reducers: {
-    //     getCalls: (state, action) => {
-    //         state.callHistory = action.payload;
-    //     },
-    //     newCall: (state, action) => {
-    //         state.callHistory.push(action.payload);
-    //     },
     //     deleteCall: (state, action) => {
     //         state.callHistory = state.callHistory.filter(call => call.id !== action.payload);
     //     },
@@ -46,6 +54,14 @@ const historySlice = createSlice({
         [getHistory.fulfilled]: (state, action) => {
             state.status = "success";
             state.callHistory = action.payload;
+        },
+        [addHistory.pending]: (state) => {
+            state.status = "pending";
+        },
+        [addHistory.fulfilled]: (state, action) => {
+            debugger;
+            state.status = "success";
+            state.callHistory.push(action.payload);
         },
         [deleteHistory.pending]: (state) => {
             state.status = "pending";

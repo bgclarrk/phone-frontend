@@ -1,10 +1,11 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setDuration, addHistory } from '../redux/phoneSlice';
+import { setDuration } from '../redux/phoneSlice';
+import { addHistory } from '../redux/historySlice';
 
 export function Buttons() {
     const dispatch = useDispatch();
-    let select = useSelector(state => state.call);
+    const select = useSelector(state => state.call);
     let callInProgress = false;
     let callTime;
     let call;
@@ -32,8 +33,8 @@ export function Buttons() {
     }
     
     const addCallToHistory = () => {
-        addHistory(select);
-        debugger
+        let call = select
+        dispatch(addHistory(call));
     }
 
     return (
