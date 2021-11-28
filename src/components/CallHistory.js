@@ -1,8 +1,7 @@
 import moment from 'moment';
-import { connect } from 'react-redux';
-import { deleteCall } from '../redux/historySlice';
+import { deleteHistory } from '../redux/historySlice';
 
-const CallHistory = ({id, phoneNumber, duration, createdAt, deleteCall}) => {
+const CallHistory = ({id, phoneNumber, duration, createdAt}) => {
 
     const formattedTime = (dateTime) => {
         return moment(dateTime).format('L LT');
@@ -35,7 +34,7 @@ const CallHistory = ({id, phoneNumber, duration, createdAt, deleteCall}) => {
                 <div className="col-3"> {formattedTime(createdAt)}</div>
                 <div className="col-3"> {formattedPhone(phoneNumber)}</div>
                 <div className="col-3"> {formattedDuration(duration)}</div>
-                <div id={id} onClick={() => deleteCall(id)} className="col-3">
+                <div id={id} onClick={() => deleteHistory(id)} className="col-3">
                     X
                 </div>
             </div>
@@ -44,8 +43,4 @@ const CallHistory = ({id, phoneNumber, duration, createdAt, deleteCall}) => {
 
 }
 
-const mapStateToProps = (state) => {
-    return {...state.calls}
-}
-
-export default connect(null, {deleteCall})(CallHistory);
+export default CallHistory;

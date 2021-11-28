@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setDuration } from '../redux/phoneSlice';
+import { addHistory } from '../redux/historySlice';
 
 export function Buttons() {
     const dispatch = useDispatch()

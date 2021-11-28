@@ -5,11 +5,10 @@ import CallHistory from '../components/CallHistory';
 
 export function CallHistoryContainer() {
     const dispatch = useDispatch();
-    const { history } = useSelector(state => state.history.callHistory);
 
     useEffect(() => {
         dispatch(getHistory())
-    },[history])
+    },[dispatch])
 
     return (
         <div className="container">
