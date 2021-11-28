@@ -43,10 +43,6 @@ const historySlice = createSlice({
         callHistory: [],
         status: null
     },
-    //     deleteCall: (state, action) => {
-    //         state.callHistory = state.callHistory.filter(call => call.id !== action.payload);
-    //     },
-    // },
     extraReducers: {
         [getHistory.pending]: (state) => {
             state.status = "loading";
@@ -59,7 +55,6 @@ const historySlice = createSlice({
             state.status = "pending";
         },
         [addHistory.fulfilled]: (state, action) => {
-            debugger;
             state.status = "success";
             state.callHistory.push(action.payload);
         },
