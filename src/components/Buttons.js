@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { setDuration } from '../redux/phoneSlice';
+import { setDuration, clearCall } from '../redux/phoneSlice';
 import { addHistory } from '../redux/historySlice';
 
 export function Buttons() {
@@ -35,6 +35,7 @@ export function Buttons() {
     const addCallToHistory = () => {
         let call = select
         dispatch(addHistory(call));
+        dispatch(clearCall());
     }
 
     return (

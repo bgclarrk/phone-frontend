@@ -13,9 +13,14 @@ export const phoneSlice = createSlice({
         setDuration: (state, action) => {
             state.duration = action.payload;
         },
+        clearCall: (state) => {
+            debugger;
+            state.duration = 0;
+            state.phoneNumber = "";
+        },
     },
 });
 
-export const { addNumber, setDuration } = phoneSlice.actions;
+export const { addNumber, setDuration, clearCall } = phoneSlice.actions;
 
 export default phoneSlice.reducer;
