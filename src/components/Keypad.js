@@ -5,7 +5,7 @@ export function Keypad() {
     const dispatch = useDispatch()
 
     return (
-        <div>
+        <>
             <div className="row">
                 <div className="col-1 text-center">
                     <button
@@ -120,7 +120,7 @@ export function Keypad() {
                     <button type="button" id="hashtag" className="btn btn-primary btn-lg keypad">&#35;</button>
                 </div>
             </div>
-        </div>
+        </>
     )
 
 }
