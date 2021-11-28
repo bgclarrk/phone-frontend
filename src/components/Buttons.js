@@ -7,12 +7,12 @@ export function Buttons() {
     const dispatch = useDispatch();
     const call = useSelector(state => state.call);
     let status = useSelector(state => state.call.status);
-    let incr;
+    let timer;
 
     const startCall = () => {
         if (!status) {
             dispatch(setStatus(true));
-            incr = setInterval(incrementCount, 1000);
+            timer = setInterval(incrementCount, 1000);
         }
     }
 
@@ -29,7 +29,7 @@ export function Buttons() {
         }
     }
     
-    const stopTimer = () => clearInterval(incr);
+    const stopTimer = () => clearInterval(timer);
     
     return (
         <div className="row text-center">

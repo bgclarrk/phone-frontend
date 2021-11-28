@@ -6,6 +6,11 @@ export const KeypadDisplay = () => {
         <>
             <div className="row">
                 <div className="col-3">
+                    {useSelector(state => state.call.progress) ? "Calling..." : " "}
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-3">
                     <div className="alert alert-secondary text-center" role="alert">
                         {useSelector(state => state.call.phoneNumber)}
                     </div>
