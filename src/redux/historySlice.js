@@ -68,4 +68,6 @@ const historySlice = createSlice({
     },
 });
 
+export const getCallHistoryFromStore = state => state.history.callHistory
+
 export default historySlice.reducer;
