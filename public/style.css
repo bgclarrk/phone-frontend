@@ -8,7 +8,7 @@ button {
 }
 
 .keypad-container {
-    margin-top: 5rem !important;
+    margin-top: 7rem !important;
 }
 
 .keypad {
@@ -16,9 +16,16 @@ button {
 }
 
 .alert {
-    height: 10% !important;
+    height: 15% !important;
     width: 16% !important;
     position: fixed !important;
+}
+
+.details {
+    margin-top: 1rem !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    color:darkgreen !important;
 }
 
 .delete {

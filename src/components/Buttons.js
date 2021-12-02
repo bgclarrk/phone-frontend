@@ -6,12 +6,11 @@ import { addHistory } from '../redux/historySlice';
 export function Buttons() {
     const dispatch = useDispatch();
     const call = useSelector(state => state.call);
-    let status = useSelector(state => state.call.status);
-    
+
     useEffect(
         () => {
             let timer
-            if(status) {
+            if(call.status) {
                 timer = setInterval(incrementCount,1000)
             } else {
                 if(timer){
@@ -21,11 +20,11 @@ export function Buttons() {
             return () => {
                     clearTimeout(timer)
                 }
-        }, [status]
+        }, [call.status]
     );
 
     const startCall = () => {
-        if (!status && call.phoneNumber) {
+        if (!call.status && call.phoneNumber) {
             dispatch(setStatus(true));
         }
     }
@@ -35,7 +34,7 @@ export function Buttons() {
     }
 
     const endCall = () => {
-        if (status) {
+        if (call.status) {
             dispatch(setStatus(false));
             dispatch(addHistory(call));
             dispatch(clearCall());
@@ -47,6 +46,7 @@ export function Buttons() {
             <div className="col-3">
                 <button type="button" onClick={startCall} className="btn btn-success btn-lg">Start</button>
                 <button type="button" onClick={endCall} className="btn btn-danger btn-lg">end</button>
+                <p>{call.phoneNumber === "" ? "Please enter a phone number" : ""}</p>
             </div>
         </div>
     )
