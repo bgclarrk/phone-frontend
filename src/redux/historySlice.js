@@ -11,7 +11,7 @@ export const getHistory = createAsyncThunk(
 export const addHistory = createAsyncThunk(
     "call/addCallHistory",
     async (call) => {
-        return await fetch(`http://localhost:3001/api/v1/calls`, {
+        const response = await fetch(`http://localhost:3001/api/v1/calls`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -20,13 +20,16 @@ export const addHistory = createAsyncThunk(
             body: JSON.stringify(call)
         })
         .then(resp => resp.json())
+        debugger
+        return response
     }
+   
 )
 
 export const deleteHistory = createAsyncThunk(
     "history/deleteCallHistory",
     async (id) => {
-        return await fetch(`http://localhost:3001/api/v1/calls/${id}`, {
+        await fetch(`http://localhost:3001/api/v1/calls/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -34,6 +37,7 @@ export const deleteHistory = createAsyncThunk(
             method: "DELETE"
         })
         .then(resp => resp.json())
+        return id;
     }
 )
 

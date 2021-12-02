@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setDuration, setStatus, clearCall } from '../redux/phoneSlice';
 import { addHistory } from '../redux/historySlice';
@@ -7,12 +7,25 @@ export function Buttons() {
     const dispatch = useDispatch();
     const call = useSelector(state => state.call);
     let status = useSelector(state => state.call.status);
-    let timer;
+    useEffect(
+        () => {
+            let timer
+            if(status) {
+                timer = setInterval(incrementCount,1000)
+            } else {
+                if(timer){
+                clearTimeout(timer)
+                }
+            }
+            return () => {
+                clearTimeout(timer)
+                }
+        }, [status]
+    );
 
     const startCall = () => {
-        if (!status) {
+        if (!status && call.phoneNumber) {
             dispatch(setStatus(true));
-            timer = setInterval(incrementCount, 1000);
         }
     }
 
@@ -23,13 +36,12 @@ export function Buttons() {
     const endCall = () => {
         if (status) {
             dispatch(setStatus(false));
-            stopTimer();
             dispatch(addHistory(call));
             dispatch(clearCall());
         }
     }
     
-    const stopTimer = () => clearInterval(timer);
+
     
     return (
         <div className="row text-center">
