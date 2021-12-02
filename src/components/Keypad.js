@@ -104,7 +104,14 @@ export function Keypad() {
             </div>
             <div className="row">
                 <div className="col-1 text-center">
-                    <button type="button" id="asterisk" className="btn btn-primary btn-lg keypad">&#x204E;</button>
+                    <button
+                        type="button"
+                        onClick={() => dispatch(addNumber("#"))}
+                        id="0"
+                        className="btn btn-primary btn-lg keypad"
+                    >
+                        &#x204E;
+                    </button>
                 </div>
                 <div className="col-1 text-center">
                     <button
@@ -117,7 +124,14 @@ export function Keypad() {
                     </button>
                 </div>
                 <div className="col-1 text-center">
-                    <button type="button" id="hashtag" className="btn btn-primary btn-lg keypad">&#35;</button>
+                    <button
+                        type="button"
+                        onClick={() => dispatch(addNumber("#"))}
+                        id="0"
+                        className="btn btn-primary btn-lg keypad"
+                    >
+                        &#35;
+                    </button>
                 </div>
             </div>
         </div>
