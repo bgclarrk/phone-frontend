@@ -39,7 +39,7 @@ const CallHistory = ({id, phoneNumber, duration, createdAt}) => {
                 <div className="col-3"> {formattedTime(createdAt)}</div>
                 <div className="col-3"> {formattedPhone(phoneNumber)}</div>
                 <div className="col-3"> {formattedDuration(duration)}</div>
-                <div id={id} onClick={() => dispatch(deleteHistory(id))} className="col-3">
+                <div id={id} onClick={() => dispatch(deleteHistory(id))} className="col-3 delete">
                     X
                 </div>
             </div>
