@@ -20,7 +20,6 @@ export const addHistory = createAsyncThunk(
             body: JSON.stringify(call)
         })
         .then(resp => resp.json())
-        debugger
         return response
     }
    

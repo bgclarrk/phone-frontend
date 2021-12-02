@@ -7,6 +7,16 @@ button {
     padding: .5rem 2rem !important;
 }
 
+.keypad-container {
+    margin-top: 5rem !important;
+}
+
 .keypad {
     border-radius: 2rem !important;
+}
+
+.alert {
+    height: 10% !important;
+    width: 16% !important;
+    position: fixed !important;
 }

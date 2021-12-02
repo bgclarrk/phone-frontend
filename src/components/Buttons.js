@@ -7,6 +7,7 @@ export function Buttons() {
     const dispatch = useDispatch();
     const call = useSelector(state => state.call);
     let status = useSelector(state => state.call.status);
+    
     useEffect(
         () => {
             let timer
@@ -14,11 +15,11 @@ export function Buttons() {
                 timer = setInterval(incrementCount,1000)
             } else {
                 if(timer){
-                clearTimeout(timer)
+                    clearTimeout(timer)
                 }
             }
             return () => {
-                clearTimeout(timer)
+                    clearTimeout(timer)
                 }
         }, [status]
     );
@@ -40,9 +41,7 @@ export function Buttons() {
             dispatch(clearCall());
         }
     }
-    
-
-    
+        
     return (
         <div className="row text-center">
             <div className="col-3">
