@@ -6,10 +6,17 @@ import CallHistory from '../components/CallHistory';
 export function CallHistoryContainer() {
     const dispatch = useDispatch();
     const calls = useSelector(getCallHistoryFromStore);
+    let input = null
 
     useEffect(() => {
         dispatch(getHistory())
     },[dispatch])
+
+    const sortInput = (e) => {
+        input = e.target.value;
+        let sortedCalls = calls.map(call => call.phoneNumber.startsWith(input))
+        console.log(sortedCalls)
+    }
 
     return (
         <div className="container">
@@ -19,7 +26,7 @@ export function CallHistoryContainer() {
             <div className="row">
                 <div className="col-8">
                     <h6>Sort calls</h6>
-                    <input type="text" />
+                    <input type="text" onChange={sortInput} className="sortInput" />
                 </div>
             </div>
             <div className="row">
@@ -29,7 +36,7 @@ export function CallHistoryContainer() {
                 <div className="col-2"><h6>Delete Call</h6></div>
                 <div className="col-2"><h6>Likes</h6></div>
             </div>
-            {calls.map(hist => <CallHistory {...hist} key={hist.createdAt} />)}
+            {calls.map(call => <CallHistory {...call} key={call.createdAt} />)}
         </div>
     );
 
