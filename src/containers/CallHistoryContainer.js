@@ -1,12 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getHistory, filterCalls, getCallHistoryFromStore, getfilteredCallHistoryFromStore } from '../redux/historySlice';
+import { getHistory, callHistoryFilter } from '../redux/historySlice';
 import CallHistory from '../components/CallHistory';
 
 export function CallHistoryContainer() {
     const dispatch = useDispatch();
-    const calls = useSelector(getCallHistoryFromStore);
-    const filteredCalls = useSelector(getfilteredCallHistoryFromStore)
+
+    const history = useSelector(
+        (state) => {
+            const all = state.history.callHistory;
+            const filter = state.history.filter;
+            if ( filter === null ) {
+                return all;
+            }
+            else {
+                return all.filter( h => h.phoneNumber.startsWith(filter) );
+            }
+        }
+    );
 
     useEffect(() => {
         dispatch(getHistory())
@@ -14,10 +25,9 @@ export function CallHistoryContainer() {
 
     const filter = (e) => {
         if (e) {
-            dispatch(filterCalls(e.target.value))
-            return filteredCalls.map(call => <CallHistory {...call} key={calls.createdAt} />)
+            dispatch(callHistoryFilter(e.target.value))
         } else {
-            return calls.map(call => <CallHistory {...call} key={call.createdAt} />)
+            return history
         }
     }
 
@@ -39,7 +49,7 @@ export function CallHistoryContainer() {
                 <div className="col-2"><h6>Likes</h6></div>
                 <div className="col-2"><h6>Delete Call</h6></div>
             </div>
-            {filter()}
+            {filter().map(call => <CallHistory {...call} key={call.createdAt} />)}
         </div>
     );
 
