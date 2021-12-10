@@ -44,7 +44,17 @@ const historySlice = createSlice({
     name: 'history',
     initialState: {
         callHistory: [],
+        filteredHistory: [],
         status: null
+    },
+    reducers: {
+        filterCalls: (state, action) => {
+            debugger;
+            state.filteredHistory = state.callHistory
+            state.filteredHistory = state.filteredHistory.filter(call => 
+                call.phoneNumber.startsWith(action.payload)
+            );
+        },
     },
     extraReducers: {
         [getHistory.pending]: (state) => {
@@ -72,5 +82,7 @@ const historySlice = createSlice({
 });
 
 export const getCallHistoryFromStore = state => state.history.callHistory
+export const getfilteredCallHistoryFromStore = state => state.history.filteredHistory
+export const { filterCalls } = historySlice.actions
 
 export default historySlice.reducer;

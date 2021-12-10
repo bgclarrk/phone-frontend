@@ -34,3 +34,10 @@ button {
     color: red !important;
     cursor: pointer !important;
 }
+
+.like {
+    font-size: 20px !important;
+    font-weight: bold !important;
+    color: green !important;
+    cursor: pointer !important;
+}
